@@ -1,8 +1,18 @@
-function PostCard() {
+interface PostCardProps {
+	post: {
+		userId: number,
+		id: number,
+		title: string,
+		body: string
+	}
+}
+
+function PostCard({ post }: PostCardProps) {
 	return (
-		<>
-			<div>PostCard</div>
-		</>
+		<div>
+			<h2>{post.title}</h2>
+			<p>{post.body}</p>
+		</div>
 	)
 }
 

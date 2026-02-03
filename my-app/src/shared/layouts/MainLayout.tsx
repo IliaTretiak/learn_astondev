@@ -1,12 +1,12 @@
 import Header from "../../widgets/LayoutHeader/Header"
 import Footer from "../../widgets/LayoutFooter/Footer"
-import PostCard from '../../entities/post/ui/PostCard'
+import PostList from '../../widgets/PostList/PostList'
 
 function MainLayout() {
 	return (
 		<>
 			<Header />
-			<PostCard />
+			<PostList />
 			<Footer />
 		</>
 
