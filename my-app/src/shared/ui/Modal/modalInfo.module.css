@@ -1,0 +1,9 @@
+.modalInfo {
+	position: fixed;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #93b998;
+	padding: 15px;
+	z-index: 500;
+}

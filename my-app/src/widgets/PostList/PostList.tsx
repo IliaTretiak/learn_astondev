@@ -1,4 +1,6 @@
 import PostCard from '../../entities/post/ui/PostCard'
+import { Fragment } from 'react'
+import style from './postList.module.css'
 
 interface Post {
 	userId: number,
@@ -50,10 +52,12 @@ const postsList: Post[] = [
 
 function PostList() {
 	return (
-		<div>
+		<div className={style.postList}>
 			{
 				postsList.map((post) => (
-					<PostCard key={post.id} post={post} />
+					<Fragment key={post.id}>
+						<PostCard post={post} />
+					</Fragment>
 				))
 			}
 		</div>
