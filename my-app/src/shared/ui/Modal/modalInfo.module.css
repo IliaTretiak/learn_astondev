@@ -7,3 +7,8 @@
 	padding: 15px;
 	z-index: 500;
 }
+
+.modalInfo__title {
+	display: flex;
+	justify-content: space-between;
+}
