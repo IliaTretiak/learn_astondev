@@ -1,8 +1,12 @@
 import MainLayout from '../shared/layouts/MainLayout'
+import ThemeProvider from '../shared/lib/theme/ThemeProvider'
+import '../app/styles/index.css'
 
 function App() {
   return (
-    <MainLayout />
+    <ThemeProvider>
+      <MainLayout />
+    </ThemeProvider>
   )
 }
 
