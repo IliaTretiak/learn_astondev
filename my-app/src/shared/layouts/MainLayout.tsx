@@ -2,17 +2,19 @@ import Header from "../../widgets/LayoutHeader/Header"
 import Footer from "../../widgets/LayoutFooter/Footer"
 import PostList from '../../widgets/PostList/PostList'
 import { useContext } from 'react'
-import { ThemeContext } from '../lib/theme/ThemeProvider'
 import style from './mainLayout.module.css'
+import { ThemeContext, type ThemeContextType } from '../lib/theme/ThemeContext'
+import withLoading from '../lib/hoc/withLoading'
 
 function MainLayout() {
-	//перепроверить тип
-	const { theme }: any = useContext(ThemeContext)
+	const { theme } = useContext(ThemeContext) as ThemeContextType
 	const className = 'theme__main-' + theme
+	const PostListWithLoading = withLoading(PostList)
+
 	return (
 		<div className={`${className} ${style.page}`}>
 			<Header />
-			<PostList />
+			<PostListWithLoading />
 			<Footer />
 		</ div>
 
