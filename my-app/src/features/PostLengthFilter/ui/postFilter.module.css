@@ -1,0 +1,21 @@
+.postFilter {
+	display: flex;
+	gap: 20px;
+}
+
+.postFilter__fieldset {
+	border-radius: 8px;
+	font-size: 14px;
+}
+
+.postFilter__input {
+	border: 1px solid #ABA8A8;
+	border-radius: 8px;
+	padding-left: 12px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.postFilter__inputButton {
+	display: none;
+}
