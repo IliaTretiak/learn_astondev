@@ -1,4 +1,3 @@
-import Header from "../../widgets/LayoutHeader/Header"
 import Footer from "../../widgets/LayoutFooter/Footer"
 import PostList from '../../widgets/PostList/PostList'
 import { useContext } from 'react'
@@ -13,7 +12,6 @@ function MainLayout() {
 
 	return (
 		<div className={`${className} ${style.page}`}>
-			<Header />
 			<PostListWithLoading />
 			<Footer />
 		</ div>

@@ -13,13 +13,14 @@ export interface PostCardProps {
 
 function PostCard({ post }: PostCardProps) {
 	const [visible, setVisible] = useState<boolean>(false)
-	const isvisible = useCallback(() => {
-		setVisible(true)
-	}, [])
+	// const isvisible = useCallback(() => {
+	// 	setVisible(!visible)
+	// }, [])
+
 
 	return (
 		<div>
-			<h2 className={styles.postCard} onClick={isvisible}>{post.title}</h2>
+			<h2 className={styles.postCard} onClick={() => setVisible(!visible)}>{post.title}</h2>
 			<CommentList isOpen={visible} children={post.body} />
 		</div>
 	)

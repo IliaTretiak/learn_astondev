@@ -1,8 +1,9 @@
 import PostCard from '../../entities/post/ui/PostCard'
-import { Fragment, useCallback, useMemo, useState, type ChangeEvent, type MouseEvent, type MouseEventHandler } from 'react'
+import { Fragment, useMemo, useState, type ChangeEvent, type MouseEvent } from 'react'
 import style from './postList.module.css'
 import PostLengthFilter from '../../features/PostLengthFilter/ui/PostLengthFilter'
 import filterByLength from '../../features/PostLengthFilter/lib/filterByLength'
+import usePosts from '../../features/PostList/model/hooks/usePosts'
 
 export interface Post {
 	userId: number,
@@ -11,17 +12,8 @@ export interface Post {
 	body: string,
 }
 
-function PostList({
-}) {
-	const [posts, setPosts] = useState<Post[]>([])
-
-	useMemo(() => {
-		fetch('https://jsonplaceholder.typicode.com/posts')
-			.then((res) => res.json())
-			.then((json) => {
-				setPosts(json)
-			})
-	}, [])
+function PostList() {
+	const posts = usePosts('https://jsonplaceholder.typicode.com/posts')
 
 	const [length, setLength] = useState<string>("0")
 
@@ -42,9 +34,10 @@ function PostList({
 			<PostLengthFilter
 				sendCalculation={(e) => sendCalculation(e)}
 				changeLength={(e) => changeLength(e)}
-				children={"Фильтр по длине заголовка"} />
+				children={"Фильтр по длине заголовка"
+				} />
 			{
-				filterPosts.map((post: Post) => (
+				filterPosts.map((post) => (
 					<Fragment key={post.id}>
 						<PostCard post={post} />
 					</Fragment>
