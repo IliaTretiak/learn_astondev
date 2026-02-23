@@ -13,7 +13,7 @@ export interface Post {
 }
 
 function PostList() {
-	const posts = usePosts('https://jsonplaceholder.typicode.com/posts')
+	const posts = usePosts()
 
 	const [length, setLength] = useState<string>("0")
 

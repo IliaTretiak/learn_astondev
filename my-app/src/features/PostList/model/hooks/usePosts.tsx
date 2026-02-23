@@ -1,15 +1,9 @@
-import { useEffect, useState } from 'react'
-import type { Post } from '../../../../widgets/PostList/PostList';
+import { useGetPostsQuery } from '../../../../entities/[entity]/api/postsApi'
 
-function usePosts(fetchData: string) {
-	const [posts, setPosts] = useState<Post[]>([])
-	useEffect(() => {
-		fetch(fetchData)
-			.then((res) => res.json())
-			.then((json) => {
-				setPosts(json)
-			})
-	}, [fetchData])
+function usePosts() {
+	const { data } = useGetPostsQuery()
+	const posts = data || []
+
 
 	return posts
 }
