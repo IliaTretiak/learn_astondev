@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import styles from './userTabs.module.css'
 
 function UserTabs() {
-	const routs = ["/", "/posts", "/posts/:id", "/users/:id/albums", "/albums/:id/photos", "/users/:id/todos", "/users/:id/posts"]
+	const routs = ["/", "posts", "/users/id/albums", "/albums/id/photos", "/users/id/todos", "/users/id/posts"]
 
 	return (
 		<div className={styles.userTabs}>

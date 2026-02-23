@@ -3,7 +3,7 @@ type PostCardProps = {
 	isOpen: boolean
 }
 
-const CommentList = ({ children, isOpen }: PostCardProps) => {
+function CommentList({ children, isOpen }: PostCardProps) {
 	if (!isOpen) return null
 	else
 		return (
