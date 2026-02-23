@@ -1,5 +1,5 @@
 import PostCard from '../../entities/post/ui/PostCard'
-import { Fragment, useMemo, useState, type ChangeEvent, type MouseEvent } from 'react'
+import { Fragment, useMemo, useState } from 'react'
 import style from './postList.module.css'
 import PostLengthFilter from '../../features/PostLengthFilter/ui/PostLengthFilter'
 import filterByLength from '../../features/PostLengthFilter/lib/filterByLength'
@@ -17,14 +17,6 @@ function PostList() {
 
 	const [length, setLength] = useState<string>("0")
 
-	function changeLength(e: ChangeEvent) {
-		const value: string | undefined = (e.target as HTMLInputElement).value;
-		setLength(value);
-	}
-	function sendCalculation(e: MouseEvent) {
-		e.preventDefault()
-	}
-
 	const filterPosts = useMemo(() => {
 		return filterByLength(length, posts)
 	}, [posts, length])
@@ -32,8 +24,7 @@ function PostList() {
 	return (
 		<div className={style.postList}>
 			<PostLengthFilter
-				sendCalculation={(e) => sendCalculation(e)}
-				changeLength={(e) => changeLength(e)}
+				setLength={(e) => setLength(e)}
 				children={"Фильтр по длине заголовка"
 				} />
 			{
