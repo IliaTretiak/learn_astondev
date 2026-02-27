@@ -1,16 +1,10 @@
-interface ButtonProps {
-	onclick: () => void;
-	children: string;
-	styles: string
-}
+import type { ButtonProps } from '../../../entities/[entity]/model/types'
+import type { PropsWithChildren } from 'react'
+import styles from './button.module.css'
 
-function Button({
-	onclick,
-	children,
-	styles
-}: ButtonProps) {
+function Button(props: PropsWithChildren<ButtonProps>) {
 	return (
-		<button className={styles} onClick={onclick}>{children}</button>
+		<button className={`${props.styles} ${styles.button}`} onClick={props.onclick}>{props.children}</button>
 	)
 }
 

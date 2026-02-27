@@ -1,5 +1,7 @@
-import type { Post } from '../../../widgets/PostList/PostList';
+import type { Post } from '../../../entities/[entity]/model/types';
 
-export default function filterByLength(length: string | undefined, array: Post[]) {
+function filterByLength(length: string | undefined, array: Post[]) {
 	return array.map((elem) => elem).filter(elem => elem.title.length > Number(length))
 }
+
+export default filterByLength

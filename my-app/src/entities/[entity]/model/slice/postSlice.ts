@@ -1,8 +1,9 @@
 import { createEntityAdapter, createSlice, type EntityState } from '@reduxjs/toolkit';
-import type { Post } from '../../../../widgets/PostList/PostList';
+import type { Post } from '../types';
+import { postApi } from '../../api/postsApi';
 
 interface PostState extends EntityState<Post, number> {
-	status: "idle" | "loading" | "succeeded" | "failed";
+	status: "idle";
 }
 
 interface RootState {
@@ -17,20 +18,19 @@ const postSlice = createSlice({
 	reducers: {
 		postReceived: postAdapter.setAll,
 	},
+	extraReducers: (builder) => {
+		builder
+			.addMatcher(postApi.endpoints.getPosts.matchFulfilled, (state, action) => {
+				postAdapter.setAll(state, action.payload);
+			})
+	},
 })
 
 export const { postReceived } = postSlice.actions
+export default postSlice.reducer
 
 export const {
 	selectAll: selectAllPost,
 	selectById: selectPostById
 } = postAdapter
 	.getSelectors((state: RootState) => state.post)
-
-export default postSlice.reducer
-
-
-// const allPosts = useSelector(selectAllPost)
-// const onePost = useSelector((state) => selectPostById(state, postId))
-
-

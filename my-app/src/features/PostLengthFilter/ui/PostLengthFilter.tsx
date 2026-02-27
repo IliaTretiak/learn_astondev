@@ -1,15 +1,12 @@
 import { type ChangeEvent, type MouseEvent } from 'react'
 import styles from './postFilter.module.css'
+import type { PostListProps } from '../../../entities/[entity]/model/types'
+import type { PropsWithChildren } from 'react'
 
-type PostListProps = {
-	setLength: (value: string) => void
-	children: string
-}
-
-function PostLengthFilter({ setLength, children }: PostListProps) {
+function PostLengthFilter(props: PropsWithChildren<PostListProps>) {
 	function changeLength(e: ChangeEvent) {
 		const value: string | undefined = (e.target as HTMLInputElement).value
-		setLength(value)
+		props.setLength(value)
 	}
 	function sendCalculation(e: MouseEvent) {
 		e.preventDefault()
@@ -19,7 +16,7 @@ function PostLengthFilter({ setLength, children }: PostListProps) {
 		<div className={styles.postFilter}>
 			<form>
 				<fieldset className={styles.postFilter__fieldset}>
-					<legend>{children}</legend>
+					<legend>{props.children}</legend>
 					<input
 						className={styles.postFilter__input}
 						type='number'

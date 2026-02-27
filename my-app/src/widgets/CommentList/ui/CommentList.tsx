@@ -1,13 +1,11 @@
-type PostCardProps = {
-	children: string
-	isOpen: boolean
-}
+import type { CommentListProps } from '../../../entities/[entity]/model/types'
+import type { PropsWithChildren } from 'react'
 
-function CommentList({ children, isOpen }: PostCardProps) {
-	if (!isOpen) return null
+function CommentList(props: PropsWithChildren<CommentListProps>) {
+	if (!props.isOpen) return null
 	else
 		return (
-			<p>{children}</p>
+			<p>{props.children}</p>
 		)
 }
 

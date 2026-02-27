@@ -1,12 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Albums from '../../../pages/albums/Albums';
-import Albums_user from '../../../pages/users/id/albums/Albums'
+import Albums_user from '../../../pages/users/albums/Albums'
 import App from '../../App';
 import MainLayout from '../../../shared/layouts/MainLayout';
-import Photos from '../../../pages/albums/id/photos/Photos';
-import Posts from '../../../pages/users/id/posts/Posts';
+import Photos from '../../../pages/albums/photos/Photos';
 import Users from '../../../pages/users/Users';
-import Todos from '../../../pages/users/id/todos/Todos';
+import Todos from '../../../pages/users/todos/Todos';
+import Posts from '../../../pages/posts/Posts';
+import Posts__users from '../../../pages/users/posts/Posts'
 
 const router = createBrowserRouter([
 	{
@@ -22,28 +23,38 @@ const router = createBrowserRouter([
 				element: <Posts />,
 			},
 			{
-				path: "users/id/albums",
-				element: <Albums_user />
-			},
-			{
-				path: "albums/id/photos",
-				element: <Photos />,
-			},
-			{
-				path: "users/id/todos",
-				element: <Todos />
-			},
-			{
-				path: "users/id/posts",
-				element: <Posts />
-			},
-			{
-				path: "albums",
-				element: <Albums />,
+				path: "posts/:id",
+				element: <Posts />,
 			},
 			{
 				path: "users",
 				element: <Users />,
+			},
+			{
+				path: "users/:id",
+				element: <Users />,
+			},
+			{
+				path: "users/:id/albums",
+				element: <Albums_user />
+			},
+			{
+				path: "users/:id/todos",
+				element: <Todos />
+			},
+			{
+				path: "users/:id/posts",
+				element: <Posts__users />
+			},
+
+			{
+				path: "albums/id/photos",
+				element: <Photos />,
+			},
+
+			{
+				path: "albums",
+				element: <Albums />,
 			},
 		]
 	}

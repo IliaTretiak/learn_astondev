@@ -5,13 +5,6 @@ import PostLengthFilter from '../../features/PostLengthFilter/ui/PostLengthFilte
 import filterByLength from '../../features/PostLengthFilter/lib/filterByLength'
 import usePosts from '../../features/PostList/model/hooks/usePosts'
 
-export interface Post {
-	userId: number,
-	id: number,
-	title: string,
-	body: string,
-}
-
 function PostList() {
 	const posts = usePosts()
 
