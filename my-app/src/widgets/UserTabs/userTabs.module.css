@@ -1,0 +1,9 @@
+.userTabs {
+	display: flex;
+	gap: 15px;
+
+}
+
+.userTabs_link {
+	color: #000000;
+}

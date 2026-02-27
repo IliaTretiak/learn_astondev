@@ -1,4 +1,7 @@
 .theme__main-dark {
 	background-color: coral;
 	color: green;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 30px;
 }
