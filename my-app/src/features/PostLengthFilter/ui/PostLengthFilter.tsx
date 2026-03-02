@@ -1,6 +1,6 @@
 import { type ChangeEvent, type MouseEvent } from 'react'
 import styles from './postFilter.module.css'
-import type { PostListProps } from '../../../entities/[entity]/model/types'
+import type { PostListProps } from '@entities/[entity]/model/types'
 import type { PropsWithChildren } from 'react'
 
 function PostLengthFilter(props: PropsWithChildren<PostListProps>) {

@@ -1,3 +1,5 @@
+import type { ItemList } from '@shared/ui/ItemList/ItemList'
+
 export type Post = {
 	userId: number,
 	id: number,
@@ -10,13 +12,13 @@ export type PostListProps = {
 	children: string
 }
 
-export type PostCardProps = {
-	post: Post
-}
-
 export type CommentListProps = {
 	children: string
 	isOpen: boolean
+}
+
+export type PostCardProps = {
+	post: ItemList<string, number>
 }
 
 export type ModalProps = {
@@ -39,6 +41,12 @@ export type ButtonProps = {
 	styles: string
 }
 
+export type Routs = {
+	id: number,
+	rout: string,
+	title: string,
+}
+
 export type RoutsProps = {
-	routs: string[]
+	routs: Routs[]
 }

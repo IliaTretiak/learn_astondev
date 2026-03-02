@@ -1,4 +1,4 @@
-import type { CommentListProps } from '../../../entities/[entity]/model/types'
+import type { CommentListProps } from '@entities/[entity]/model/types'
 import type { PropsWithChildren } from 'react'
 
 function CommentList(props: PropsWithChildren<CommentListProps>) {

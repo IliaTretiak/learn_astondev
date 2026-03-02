@@ -1,8 +1,8 @@
 import { createEntityAdapter, createSlice, type EntityState } from '@reduxjs/toolkit';
-import type { Post } from '../types';
 import { postApi } from '../../api/postsApi';
+import type { ItemList } from '@shared/ui/ItemList/ItemList';
 
-interface PostState extends EntityState<Post, number> {
+interface PostState extends EntityState<ItemList<string, number>, number> {
 	status: "idle";
 }
 
@@ -10,7 +10,7 @@ interface RootState {
 	post: PostState;
 }
 
-const postAdapter = createEntityAdapter<Post>()
+const postAdapter = createEntityAdapter<ItemList<string, number>>()
 
 const postSlice = createSlice({
 	name: "post",

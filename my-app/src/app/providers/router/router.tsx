@@ -1,13 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Albums from '../../../pages/albums/Albums';
-import Albums_user from '../../../pages/users/albums/Albums'
-import App from '../../App';
-import MainLayout from '../../../shared/layouts/MainLayout';
-import Photos from '../../../pages/albums/photos/Photos';
-import Users from '../../../pages/users/Users';
-import Todos from '../../../pages/users/todos/Todos';
-import Posts from '../../../pages/posts/Posts';
-import Posts__users from '../../../pages/users/posts/Posts'
+import Albums from '@pages/albums/Albums';
+import Albums_user from '@pages/users/albums/Albums'
+import App from '@app/App';
+import MainLayout from '@shared/layouts/MainLayout';
+import Photos from '@pages/albums/photos/Photos';
+import Users from '@pages/users/Users';
+import Todos from '@pages/users/todos/Todos';
+import Posts from '@pages/posts/Posts';
+import Posts__users from '@pages/users/posts/Posts'
 
 const router = createBrowserRouter([
 	{

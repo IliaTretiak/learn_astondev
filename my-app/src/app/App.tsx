@@ -1,7 +1,7 @@
 import ThemeProvider from '../shared/lib/theme/ThemeProvider'
-import '../app/styles/index.css'
+import '@app/styles/index.css'
 import { Outlet } from 'react-router-dom'
-import Header from '../widgets/LayoutHeader/Header'
+import Header from '@widgets/LayoutHeader/Header'
 
 function App() {
   return (

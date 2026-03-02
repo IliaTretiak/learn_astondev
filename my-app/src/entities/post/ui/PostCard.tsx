@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import CommentList from '../../../widgets/CommentList/ui/CommentList'
+import CommentList from '@widgets/CommentList/ui/CommentList'
 import styles from './postCard.module.css'
-import Button from '../../../shared/ui/Button/Button'
+import Button from '@shared/ui/Button/Button'
 import type { PostCardProps } from '../../[entity]/model/types'
 import type { PropsWithChildren } from 'react'
 

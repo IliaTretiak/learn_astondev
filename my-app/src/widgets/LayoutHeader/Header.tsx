@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react'
-import Button from '../../shared/ui/Button/Button'
-import Modal from '../../shared/ui/Modal/Modal'
-import ThemeSwitcher from '../../features/ThemeSwitcher/ui/ThemeSwitcher'
+import Button from '@shared/ui/Button/Button'
+import Modal from '@shared/ui/Modal/Modal'
+import ThemeSwitcher from '@features/ThemeSwitcher/ui/ThemeSwitcher'
 import style from './header.module.css'
-import style__button from '../../shared/ui/Button/button.module.css'
+import style__button from '@shared/ui/Button/button.module.css'
 import UserTabs from '../UserTabs/UserTabs'
-import { ThemeContext, type ThemeContextType } from '../../shared/lib/theme/ThemeContext'
+import { ThemeContext, type ThemeContextType } from '@shared/lib/theme/ThemeContext'
 
 function Header() {
 	const { theme } = useContext(ThemeContext) as ThemeContextType
@@ -13,7 +13,23 @@ function Header() {
 
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 	const styles: string = style__button.button
-	const routs = ["/", "posts", "users"]
+	const routs = [
+		{
+			id: 1,
+			rout: "/",
+			title: "Домашняя страница"
+		},
+		{
+			id: 2,
+			rout: "posts",
+			title: "Все посты"
+		},
+		{
+			id: 3,
+			rout: "users",
+			title: "Пользователи"
+		}
+	]
 
 	return (
 		<div className={`${className} ${style.page} ${style.header__container}`}>

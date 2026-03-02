@@ -1,4 +1,4 @@
-import type { CrossProps } from '../../../entities/[entity]/model/types'
+import type { CrossProps } from '@entities/[entity]/model/types'
 import style from "./button.module.css"
 import type { PropsWithChildren } from 'react'
 

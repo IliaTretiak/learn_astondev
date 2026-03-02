@@ -1,9 +1,9 @@
-import PostCard from '../../entities/post/ui/PostCard'
+import PostCard from '@entities/post/ui/PostCard'
 import { Fragment, useMemo, useState } from 'react'
 import style from './postList.module.css'
-import PostLengthFilter from '../../features/PostLengthFilter/ui/PostLengthFilter'
-import filterByLength from '../../features/PostLengthFilter/lib/filterByLength'
-import usePosts from '../../features/PostList/model/hooks/usePosts'
+import PostLengthFilter from '@features/PostLengthFilter/ui/PostLengthFilter'
+import filterByLength from '@features/PostLengthFilter/lib/filterByLength'
+import usePosts from '@features/PostList/model/hooks/usePosts'
 
 function PostList() {
 	const posts = usePosts()
