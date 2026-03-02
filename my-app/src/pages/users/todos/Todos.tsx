@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { useGetTodosQuery } from '@entities/[entity]/api/todosApi';
+import { useGetTodosQuery } from '@entities/entity/api/todosApi';
 import style from '@widgets/PostList/postList.module.css'
 import styles from '@shared/ui/Button/button.module.css'
 import { ThemeContext, type ThemeContextType } from '@shared/lib/theme/ThemeContext';

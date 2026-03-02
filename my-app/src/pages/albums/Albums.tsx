@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectAllPost } from '../../entities/[entity]/model/slice/postSlice';
+import { selectAllPost } from '../../entities/entity/model/slice/postSlice';
 
 function Albums() {
 	const allPosts = useSelector(selectAllPost)

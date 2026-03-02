@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom'
 import style from './modal.module.css'
 import Cross from '../Button/Cross';
-import type { ModalChild, ModalProps } from '@entities/[entity]/model/types';
+import type { ModalChild, ModalProps } from '@entities/entity/model/types';
 import type { PropsWithChildren } from 'react'
 
 const portalDiv: HTMLElement = document.getElementById('portal-root')!;

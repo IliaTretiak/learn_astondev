@@ -1,4 +1,4 @@
-import type { ButtonProps } from '@entities/[entity]/model/types'
+import type { ButtonProps } from '@entities/entity/model/types'
 import type { PropsWithChildren } from 'react'
 import styles from './button.module.css'
 

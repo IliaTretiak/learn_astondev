@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import styles from './userTabs.module.css'
 import type { PropsWithChildren } from 'react'
-import type { RoutsProps } from '@entities/[entity]/model/types'
+import type { RoutsProps } from '@entities/entity/model/types'
 
 function UserTabs(props: PropsWithChildren<RoutsProps>) {
 

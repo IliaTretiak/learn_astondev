@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { selectAllPost } from '@entities/[entity]/model/slice/postSlice'
+import { selectAllPost } from '@entities/entity/model/slice/postSlice'
 import style from '@widgets/PostList/postList.module.css'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import styles from '@widgets/UserTabs/userTabs.module.css'

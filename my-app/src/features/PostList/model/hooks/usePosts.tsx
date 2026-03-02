@@ -1,4 +1,4 @@
-import { useGetPostsQuery } from '@entities/[entity]/api/postsApi'
+import { useGetPostsQuery } from '@entities/entity/api/postsApi'
 
 function usePosts() {
 	const { data } = useGetPostsQuery()
