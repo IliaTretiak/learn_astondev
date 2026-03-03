@@ -1,13 +1,20 @@
-import { type ChangeEventHandler, type MouseEventHandler } from 'react'
+import { type ChangeEvent, type MouseEvent } from 'react'
 import styles from './postFilter.module.css'
 
 type PostListProps = {
-	changeLength: ChangeEventHandler
+	setLength: (value: string) => void
 	children: string
-	sendCalculation: MouseEventHandler
 }
 
-function PostLengthFilter({ changeLength, children, sendCalculation }: PostListProps) {
+function PostLengthFilter({ setLength, children }: PostListProps) {
+	function changeLength(e: ChangeEvent) {
+		const value: string | undefined = (e.target as HTMLInputElement).value
+		setLength(value)
+	}
+	function sendCalculation(e: MouseEvent) {
+		e.preventDefault()
+	}
+
 	return (
 		<div className={styles.postFilter}>
 			<form>
