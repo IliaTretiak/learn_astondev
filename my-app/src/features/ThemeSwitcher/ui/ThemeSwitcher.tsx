@@ -1,12 +1,14 @@
 import { useContext } from 'react'
-import { ThemeContext } from '../../../shared/lib/theme/ThemeProvider'
+import Button from '../../../shared/ui/Button/Button'
+import { ThemeContext, type ThemeContextType } from '../../../shared/lib/theme/ThemeContext'
+import style from '../../../shared/ui/Button/button.module.css'
 
-function ThemeSwitcher(): any {
-	//перепроверить типы
-	const { toggleTheme }: any = useContext(ThemeContext)
+function ThemeSwitcher() {
+	const { toggleTheme } = useContext(ThemeContext) as ThemeContextType
+	const styles: string = style.button
 	return (
 		<div>
-			<button onClick={toggleTheme} > Переключить тему </button>
+			<Button styles={styles} onclick={toggleTheme} children={"Переключить тему"} />
 		</div>
 	)
 }
