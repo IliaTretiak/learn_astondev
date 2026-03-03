@@ -1,19 +1,12 @@
-import PostCard from '../../entities/post/ui/PostCard'
+import PostCard from '@entities/post/ui/PostCard'
 import { Fragment, useMemo, useState } from 'react'
 import style from './postList.module.css'
-import PostLengthFilter from '../../features/PostLengthFilter/ui/PostLengthFilter'
-import filterByLength from '../../features/PostLengthFilter/lib/filterByLength'
-import usePosts from '../../features/PostList/model/hooks/usePosts'
-
-export interface Post {
-	userId: number,
-	id: number,
-	title: string,
-	body: string,
-}
+import PostLengthFilter from '@features/PostLengthFilter/ui/PostLengthFilter'
+import filterByLength from '@features/PostLengthFilter/lib/filterByLength'
+import usePosts from '@features/PostList/model/hooks/usePosts'
 
 function PostList() {
-	const posts = usePosts('https://jsonplaceholder.typicode.com/posts')
+	const posts = usePosts()
 
 	const [length, setLength] = useState<string>("0")
 

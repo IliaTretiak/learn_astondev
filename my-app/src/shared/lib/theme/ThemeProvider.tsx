@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { ThemeContext, type Theme, type ThemeContextProviderProps } from './ThemeContext';
+import type { PropsWithChildren } from 'react'
 
-export default function ThemeProvider({
-	children,
-}: ThemeContextProviderProps) {
+function ThemeProvider(props: PropsWithChildren<ThemeContextProviderProps>) {
 	const [theme, setTheme] = useState<Theme>("light")
 
 	const toggleTheme = () => {
@@ -12,7 +11,8 @@ export default function ThemeProvider({
 	};
 
 	return (
-		<ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
+		<ThemeContext.Provider value={{ theme, toggleTheme }}>{props.children}</ThemeContext.Provider>
 	);
 }
 
+export default ThemeProvider
